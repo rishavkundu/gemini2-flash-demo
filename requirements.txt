@@ -1,0 +1,5 @@
+google-genai
+pyautogui
+python-dotenv
+sounddevice
+numpy
