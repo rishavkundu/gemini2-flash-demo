@@ -162,4 +162,5 @@ cython_debug/
 #.idea/
 
 # Ignore vision screenshots
-screenshot_*.png
+screenshot_*.jpeg
+snippets/*

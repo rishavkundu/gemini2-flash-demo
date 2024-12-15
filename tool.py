@@ -30,7 +30,10 @@ async def main():
     )
 
     model_id = "gemini-2.0-flash-exp"
-    config = {"tools": {"function_declarations": [load_file_content_schema]}, "response_modalities": ["TEXT"]}
+    config = {
+        "tools": [{"function_declarations": [load_file_content_schema]}], 
+        "response_modalities": ["TEXT"],
+    }
 
     async with client.aio.live.connect(model=model_id, config=config) as session:
         try:
@@ -44,11 +47,11 @@ async def main():
                     # Process the function call
                     if response.tool_call is not None:
                         await handle_tool_call(session, response.tool_call)
-                    elif not response.server_content.turn_complete:
+                    elif response.server_content.model_turn is not None:
                         for part in response.server_content.model_turn.parts:
                             if part.text is not None:
                                 print(part.text, end="", flush=True)
-                    print()
+                print()
         except Exception as e:
             print(f"Error: {e}")
         finally:
