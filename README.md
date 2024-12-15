@@ -23,11 +23,10 @@ Demo projects for Gemini 2 Flash.
 ## Examples
 
 - `text.py`: Demonstrates text-only chat functionality.
-
-- `tool.py`: Demonstrates how to use tools.
-
 - `voice.py`: Enables chat with voice responses.
-
+- `tool.py`: Demonstrates how to use tools. The tool schemas are defined in `tool_spec.py`.
+- `search.py`: Demonstrate how to use the search tool.
+- `code.py`: Demonstrate how to use the generate code tool.
 - `vision.py`: Combines text chat with access to screen content.
 
 ## How to Run
