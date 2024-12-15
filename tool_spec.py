@@ -8,12 +8,13 @@ def load_file_content(filename):
       return {
           "error": "Could not load file content",
       }
-
+    
+# A dictionary mapping the function names to the actual functions
 FUNCTIONS = {"load_file_content": load_file_content}
 
 load_file_content_schema = {
     "name": "load_file_content",
-    "description": "Summarize the text content of a file",
+    "description": "Load the content of a file",
     "parameters": {
         "type": "object",
         "properties": {
@@ -29,7 +30,3 @@ load_file_content_schema = {
         "description": "The text content of the file",
     },
 }
-
-tools_definitions = [
-    {"function_declarations": [load_file_content_schema]}
-]
